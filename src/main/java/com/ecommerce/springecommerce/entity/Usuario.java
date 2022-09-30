@@ -39,8 +39,8 @@ public class Usuario {
 		
 	}
 	
-	public Usuario(int id, String nombre, String username, String email, String direccion, String telefono,
-			String tipoUsuario, String password, List<Producto> productos, List<Orden> ordenes) {
+	public Usuario(Integer id, String nombre, String username, String email, String direccion, String telefono,
+			String tipoUsuario, String password) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -50,8 +50,6 @@ public class Usuario {
 		this.telefono = telefono;
 		this.tipoUsuario = tipoUsuario;
 		this.password = password;
-		this.productos = productos;
-		this.ordenes = ordenes;
 	}
 	
 	
