@@ -52,15 +52,30 @@ public class ProductoController {
 	
 	
 	@GetMapping("/edit/{id}")
-	public String edit(@PathVariable Integer id) {
+	public String edit(@PathVariable Integer id, Model model) {
 		
 		Producto producto = new Producto();
 		Optional<Producto> optionalProducto = iProductoService.get(id);
 		producto = optionalProducto.get(); // Esto permite capturar el producto que se quiere editar
 		
 		LOGGER.info("El objeto a modificar será {}", producto.toString());
+		model.addAttribute("producto", producto);
 		
 		return "productos/edit";
 	}
+	
+	@PostMapping("/update")
+	public String update(Producto producto) {
+		
+		iProductoService.update(producto);
+		
+		return "redirect:/productos";
+	}
+	
+	
+	
+	
+	
+	
 
 }
