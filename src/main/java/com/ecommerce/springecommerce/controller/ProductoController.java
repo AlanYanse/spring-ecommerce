@@ -73,6 +73,15 @@ public class ProductoController {
 	}
 	
 	
+	@GetMapping("/delete/{id}")
+	public String delete(@PathVariable int id) {
+		
+		iProductoService.delete(id);
+		
+		return "redirect:/productos";
+	}
+	
+	
 	
 	
 	
